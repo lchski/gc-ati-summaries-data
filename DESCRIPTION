@@ -2,8 +2,8 @@ Package: gc-ati-summaries-data
 Title: Scrapes GC ATI summaries from Open Data Portal
 Authors@R: person("Lucas", "Cherkewski", email = "lucas@lucascherkewski.com", role = c("aut", "cre"))
 Imports:
-    readr
-    dplyr
+    readr,
+    dplyr,
     stringr
 License: MIT
 Version: 0.1.0

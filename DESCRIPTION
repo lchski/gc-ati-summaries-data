@@ -1,3 +1,5 @@
+Package: gc-ati-summaries-data
+Title: Scrapes GC ATI summaries from Open Data Portal
 Imports:
     readr
     dplyr

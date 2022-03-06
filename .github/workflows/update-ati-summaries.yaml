@@ -18,7 +18,7 @@ jobs:
         install-r: false
     - name: Install R dependencies
       run: |-
-        R -e 'install.packages("tidyverse")'
+        R -e 'install.packages(c("readr", "dplyr", "stringr"))'
     - name: Fetch latest summaries
       run: |-
         Rscript update-ati-summaries.R

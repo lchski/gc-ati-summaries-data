@@ -1,0 +1,29 @@
+# Thanks to Simon Willison for the inspiration: https://simonwillison.net/2020/Oct/9/git-scraping/
+name: Update ATI summaries (scrape latest and merge with existing)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '42 8 * * 0' # https://crontab.guru/#42_8_*_*_0 (8 AM UTC = 3 AM ET, generally; in theory only updates once a month, but if we run weekly we'll catch any hiccups)
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+    - name: Install R dependencies
+      uses: r-lib/actions/setup-r-dependencies@v2
+    - name: Fetch latest summaries
+      run: |-
+        Rscript update-ati-summaries.R
+    - name: Commit and push if changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add ati-summaries.csv
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push

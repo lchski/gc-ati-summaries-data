@@ -1,5 +1,7 @@
 See `known-duplicates.csv` for affected entries.
 
+Run `read_csv("cleaning/known-duplicates.csv") %>% arrange(reason, owner_org) %>% write_csv("cleaning/known-duplicates.csv")` to arrange by reason.
+
 # fix-encoding-errors.R
 
 ## Invalid multibyte character

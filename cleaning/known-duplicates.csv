@@ -1,10 +1,4 @@
 owner_org,request_number,reason
-aandc-aadnc,A-2019-00043,fix-encoding-errors.R/Invalid multibyte character
-aandc-aadnc,A-2019-00269,fix-encoding-errors.RInvalid multibyte character
-aandc-aadnc,A-2019-00318,fix-encoding-errors.R/Invalid multibyte character
-aandc-aadnc,A-2020-00008,fix-encoding-errors.R/Invalid multibyte character
-aandc-aadnc,A-2020-00009,fix-encoding-errors.R/Invalid multibyte character
-aandc-aadnc,A-2019-00206,fix-encoding-errors.R/Invalid multibyte character
 aafc-aac,A-2018-00045,Misc/Different entries with same request number
 acoa-apeca,2019-00049,Misc/Missing summary for one entry but not for other
 acoa-apeca,2019-00063,Misc/Missing summary for one entry but not for other

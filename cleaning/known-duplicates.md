@@ -16,6 +16,12 @@ saved_summaries %>%
 
 Yields error: `Error: invalid multibyte character in parser at line 34`. There’s an invisible character of some sort (doesn’t even render in all editors).
 
+The invisible character is  `­` or `U+00AD : SOFT HYPHEN [SHY] {discretionary hyphen}`. Should be addressed with these two replacements (we make the hyphens explicit, instead of hiding them):
+
+```
+"Â\u00AD" = "-",
+"\u00AD" = "-",
+```
 
 
 # Misc

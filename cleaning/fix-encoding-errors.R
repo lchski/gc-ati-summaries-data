@@ -39,7 +39,9 @@ reencoded_summaries <- saved_summaries %>%
       "Ãº" = "ú",
       "ÃŠ" = "Ê",
       "Â°" = "°",
-      "â€¦" = "…"
+      "â€¦" = "…",
+      "Â\u00AD" = "-",
+      "\u00AD" = "-"
     ))
   ) %>%
   distinct()

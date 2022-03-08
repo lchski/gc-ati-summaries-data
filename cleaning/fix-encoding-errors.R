@@ -61,7 +61,16 @@ reencoded_summaries <- saved_summaries %>%
       "Ã-" = "í",
       "Ã±" = "ñ",
       "âˆ’" = "−",
-      "Ä±" = "ı"
+      "Ä±" = "ı",
+      "â–¡" = "□",
+      "Â½" = "½",
+      "â€Ž" = "", # U+200E : LEFT-TO-RIGHT MARK [LRM]
+      "\u200E" = "",
+      "â€‹" = "",
+      "" = "", # U+200B : ZERO WIDTH SPACE [ZWSP]
+      "\u200B" = "",
+      "Ê¼" = "ʼ",
+      "Å’" = "Œ"
     ))
   ) %>%
   distinct()

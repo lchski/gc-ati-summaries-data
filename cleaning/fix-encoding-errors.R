@@ -70,14 +70,16 @@ reencoded_summaries <- saved_summaries %>%
       "" = "", # U+200B : ZERO WIDTH SPACE [ZWSP]
       "\u200B" = "",
       "Ê¼" = "ʼ",
-      "Å’" = "Œ"
+      "Å’" = "Œ",
+      "Êº" = "ʺ",
+      "Â§" = "§"
     ))
   ) %>%
   distinct()
 
 # Helper variables / files for finding duplicates due to encoding
-duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
-  select(owner_org, request_number, summary_fr) %>%
+duplicate_requests_due_to_summary_en <- reencoded_summaries %>%
+  select(owner_org, request_number, summary_en) %>%
   distinct() %>%
   group_by(owner_org, request_number) %>%
   summarize(count = n()) %>%
@@ -85,8 +87,8 @@ duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
   anti_join(known_duplicates)
 
 reencoded_summaries %>%
-  semi_join(duplicate_requests_due_to_summary_fr) %>%
-  select(owner_org, request_number, summary_fr) %>%
+  semi_join(duplicate_requests_due_to_summary_en) %>%
+  select(owner_org, request_number, summary_en) %>%
   distinct() %>%
   arrange(owner_org, request_number) %>%
   write_csv("cleaning/tmp.csv")

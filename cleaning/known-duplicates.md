@@ -23,6 +23,10 @@ The invisible character is  `­` or `U+00AD : SOFT HYPHEN [SHY] {discretionary h
 "\u00AD" = "-",
 ```
 
+## Unicode long stroke overlay character
+
+Looks like `Ì¶` in version that needs re-encoding; renders as ` ̶` (two characters: a space with a hyphen overlay).
+
 
 # Misc
 

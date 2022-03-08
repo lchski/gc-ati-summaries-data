@@ -14,6 +14,24 @@ reencoded_summaries <- saved_summaries %>%
   ) %>%
   distinct()
 
+# Helper variables / files for finding duplicates due to encoding
+duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
+  select(owner_org, request_number, summary_fr) %>%
+  distinct() %>%
+  group_by(owner_org, request_number) %>%
+  summarize(count = n()) %>%
+  filter(count > 1)
+
+duplicate_requests_due_to_summary_fr %>%
+  filter(owner_org == "acoa-apeca")
+
+reencoded_summaries %>%
+  filter(owner_org == "acoa-apeca") %>%
+  select(request_number, summary_fr) %>%
+  distinct() %>%
+  arrange(request_number) %>%
+  write_csv("cleaning/tmp.csv")
+
 # Write to the CSV for the test DB.
 reencoded_summaries %>%
   write_csv("cleaning/temp-summaries.csv")

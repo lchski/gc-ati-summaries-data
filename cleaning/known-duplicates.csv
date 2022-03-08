@@ -8,3 +8,4 @@ aandc-aadnc,A-2019-00206,fix-encoding-errors.R/Invalid multibyte character
 aafc-aac,A-2018-00045,Misc/Different entries with same request number
 acoa-apeca,2019-00049,Misc/Missing summary for one entry but not for other
 acoa-apeca,2019-00063,Misc/Missing summary for one entry but not for other
+casdo-ocena,ACA-2020-00220,Misc/Summary has trailing whitespace

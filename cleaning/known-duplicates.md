@@ -27,3 +27,7 @@ What it says on the tin. Likely a manual entry error with the year.
 ## Missing summary for one entry but not for other
 
 Summary `is.na` for one entry, while `! is.na` for another (i.e., one has a summary, the other is blank—can likely just `filter(! is.na)` to fix, but would want to verify).
+
+## Summary has trailing whitespace
+
+Likely just need to `str_trim()`.

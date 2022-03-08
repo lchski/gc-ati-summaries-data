@@ -1,4 +1,9 @@
 # Thanks to Simon Willison for the inspiration: https://simonwillison.net/2020/Jan/21/github-actions-cloud-run/
+#
+# In addition to his (easy to follow) post, I had to:
+# - [set permissions so `allUsers` had `Cloud Run Invoker` role](https://cloud.google.com/run/docs/securing/managing-access#making_a_service_public)
+# - [map custom domain using Cloud Run domain mapping](https://cloud.google.com/run/docs/mapping-custom-domains#run) (my domain was already verified; had to add a CNAME in my DNS)
+
 name: Deploy datasette instance with summaries data
 
 # TODO: Add a reasonable schedule. Or on push, depending on time / cost it incurs?

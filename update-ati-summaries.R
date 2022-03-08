@@ -1,5 +1,4 @@
-# NB: Any packages loaded here should be installed in the GitHub Action (`.github/workflows/update-ati-summaries.yaml`)
-#     Yes, it’d be better if we had real package management. So it goes :)
+# NB: Any packages loaded here should be added to DESCRIPTION as Imports.
 library(readr)
 library(dplyr)
 library(stringr)

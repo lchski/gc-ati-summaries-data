@@ -7,7 +7,7 @@ on:
     - cron:  '42 8 * * 0' # https://crontab.guru/#42_8_*_*_0 (8 AM UTC = 3 AM ET, generally; in theory only updates once a month, but if we run weekly we'll catch any hiccups)
 
 jobs:
-  scheduled:
+  update-ati-summaries:
     runs-on: ubuntu-latest
     steps:
     - name: Check out this repo

@@ -109,3 +109,18 @@ tc,A-2020-00295,Misc/One summary uppercase the other lowercase
 tc,A-2020-00296,Misc/One summary uppercase the other lowercase
 tc,A-2020-00322,Misc/One summary uppercase the other lowercase
 pch,NA,Misc/Missing request number
+catsa-acsta,A-2020-00003,Misc/Entries with same request number but slightly different descriptions
+cic,A-2019-61544,Misc/Missing summary for one entry but not for other
+cnsopb,"10,555.22",Misc/Different entries with same request number
+hc-sc,A-2019-001345,Misc/Entries with same request number but slightly different descriptions
+hc-sc,A-2019-001975,Misc/Entries with same request number but slightly different descriptions
+iaac-aeic,A-2020-00049,Misc/Entries with same request number but slightly different descriptions
+iaac-aeic,A-2020-00050,Misc/Entries with same request number but slightly different descriptions
+phac-aspc,A-2019-000130,Misc/Entries with same request number but slightly different descriptions
+phac-aspc,A-2020-000078,Misc/Entries with same request number but slightly different descriptions
+phac-aspc,A-2020-000204,Misc/Entries with same request number but slightly different descriptions
+tc,A-2020-00141,Misc/Entries with same request number but slightly different descriptions
+tc,A-2020-00493,Misc/Entries with same request number but slightly different descriptions
+tc,A-2020-00502,Misc/Entries with same request number but slightly different descriptions
+tc,A-2020-00520,Misc/Entries with same request number but slightly different descriptions
+tc,A-2020-00530,Misc/Entries with same request number but slightly different descriptions

@@ -16,3 +16,5 @@ summary_col_types <- cols(
 )
 
 saved_summaries <- read_csv("ati-summaries.csv", col_types = summary_col_types)
+
+known_duplicates <- read_csv("cleaning/known-duplicates.csv")

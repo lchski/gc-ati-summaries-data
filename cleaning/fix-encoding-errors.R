@@ -20,7 +20,8 @@ duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
   distinct() %>%
   group_by(owner_org, request_number) %>%
   summarize(count = n()) %>%
-  filter(count > 1)
+  filter(count > 1) %>%
+  anti_join(known_duplicates)
 
 duplicate_requests_due_to_summary_fr %>%
   filter(owner_org == "acoa-apeca")

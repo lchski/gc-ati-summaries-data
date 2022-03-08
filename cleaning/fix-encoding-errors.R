@@ -55,9 +55,6 @@ duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
   filter(count > 1) %>%
   anti_join(known_duplicates)
 
-duplicate_requests_due_to_summary_fr %>%
-  filter(owner_org == "cbsa-asfc")
-
 reencoded_summaries %>%
   semi_join(duplicate_requests_due_to_summary_fr) %>%
   select(owner_org, request_number, summary_fr) %>%
@@ -70,4 +67,4 @@ reencoded_summaries %>%
   write_csv("cleaning/temp-summaries.csv")
 
 ## To override the saved set of summaries... Be sure you want to. (But don't worry too much, it's in Git!)
-reencoded_summaries %>% write_csv("ati-summaries.csv")
+# reencoded_summaries %>% write_csv("ati-summaries.csv")

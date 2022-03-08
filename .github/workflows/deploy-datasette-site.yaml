@@ -4,6 +4,9 @@ name: Deploy datasette instance with summaries data
 # TODO: Add a reasonable schedule. Or on push, depending on time / cost it incurs?
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'ati-summaries.csv'
 
 jobs:
   scheduled:

@@ -8,8 +8,38 @@ reencoded_summaries <- saved_summaries %>%
       "Ã‰" = "É",
       "Ã¨" = "è",
       "â€™" = "’",
+      "â€“" = "–",
       "Ã§" = "ç",
-      "Ã " = "à"
+      "Ã»" = "û",
+      "Ã¢" = "â",
+      "Ãª" = "ê",
+      "Ã´" = "ô",
+      "Â«" = "«",
+      "Â»" = "»",
+      "Ã " = "à",
+      "Å“" = "œ",
+      "Â " = " ",
+      "â€¯" = " ",
+      "â€‰" = " ",
+      "â€œ" = "“",
+      "â€" = "”",
+      "Ã¡" = "á",
+      "Ã®" = "î",
+      "Ã¯" = "ï",
+      "Ã¹" = "ù",
+      "Ãˆ" = "È",
+      "Ã€" = "À",
+      "Ã›" = "Û",
+      "Ã‡" = "Ç",
+      "ÃŽ" = "Î",
+      "Â·" = "·",
+      "â€‘" = "‑",
+      "Ã«" = "ë",
+      "â€”" = "—",
+      "Ãº" = "ú",
+      "ÃŠ" = "Ê",
+      "Â°" = "°",
+      "â€¦" = "…"
     ))
   ) %>%
   distinct()
@@ -24,10 +54,10 @@ duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
   anti_join(known_duplicates)
 
 duplicate_requests_due_to_summary_fr %>%
-  filter(owner_org == "acoa-apeca")
+  filter(owner_org == "aandc-aadnc")
 
 reencoded_summaries %>%
-  filter(owner_org == "acoa-apeca") %>%
+  filter(owner_org == "aecl-eacl") %>%
   select(request_number, summary_fr) %>%
   distinct() %>%
   arrange(request_number) %>%
@@ -38,4 +68,4 @@ reencoded_summaries %>%
   write_csv("cleaning/temp-summaries.csv")
 
 ## To override the saved set of summaries... Be sure you want to. (But don't worry too much, it's in Git!)
-# reencoded_summaries %>% write_csv("ati-summaries.csv")
+reencoded_summaries %>% write_csv("ati-summaries.csv")

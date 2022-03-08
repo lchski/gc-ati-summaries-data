@@ -27,4 +27,4 @@ jobs:
         pip install -r requirements.txt
     - name: Generate SQLite DB from CSV
       run: |
-        
+        sqlite-utils insert summaries.db summaries ati-summaries.csv --csv --detect-types

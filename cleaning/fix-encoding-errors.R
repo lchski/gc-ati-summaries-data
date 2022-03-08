@@ -54,13 +54,13 @@ duplicate_requests_due_to_summary_fr <- reencoded_summaries %>%
   anti_join(known_duplicates)
 
 duplicate_requests_due_to_summary_fr %>%
-  filter(owner_org == "aandc-aadnc")
+  filter(owner_org == "cbsa-asfc")
 
 reencoded_summaries %>%
-  filter(owner_org == "aecl-eacl") %>%
-  select(request_number, summary_fr) %>%
+  semi_join(duplicate_requests_due_to_summary_fr) %>%
+  select(owner_org, request_number, summary_fr) %>%
   distinct() %>%
-  arrange(request_number) %>%
+  arrange(owner_org, request_number) %>%
   write_csv("cleaning/tmp.csv")
 
 # Write to the CSV for the test DB.

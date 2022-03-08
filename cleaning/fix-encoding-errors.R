@@ -3,27 +3,14 @@ source("cleaning/load.R")
 reencoded_summaries <- saved_summaries %>%
   mutate_if(
     is.character,
-    ~ str_replace_all(., "Ã©", "é")
-  ) %>%
-  mutate_if(
-    is.character,
-    ~ str_replace_all(., "Ã‰", "É")
-  ) %>%
-  mutate_if(
-    is.character,
-    ~ str_replace_all(., "Ã¨", "è")
-  ) %>%
-  mutate_if(
-    is.character,
-    ~ str_replace_all(., "â€™", "’")
-  ) %>%
-  mutate_if(
-    is.character,
-    ~ str_replace_all(., "Ã§", "ç")
-  ) %>%
-  mutate_if(
-    is.character,
-    ~ str_replace_all(., "Ã ", "à")
+    ~ str_replace_all(., c(
+      "Ã©" = "é",
+      "Ã‰" = "É",
+      "Ã¨" = "è",
+      "â€™" = "’",
+      "Ã§" = "ç",
+      "Ã " = "à"
+    ))
   ) %>%
   distinct()
 

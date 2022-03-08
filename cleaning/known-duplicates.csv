@@ -61,3 +61,51 @@ cic,A-2019-78164,Misc/Missing summary for one entry but not for other
 cic,A-2019-78170,Misc/Missing summary for one entry but not for other
 cic,A-2019-78544,Misc/Missing summary for one entry but not for other
 irb-cisr,A-2018-01219,Misc/Summary has inconsistent internal whitespace
+ngc-mbac,3025-009-A2020-008,Misc/Entries with same request number but slightly different descriptions
+ngc-mbac,3025-009-A2021-001,Misc/Entries with same request number but slightly different descriptions
+nrcan-rncan,A-2020-00420,Misc/Entries with same request number but slightly different descriptions
+nserc-crsng,A-2017-00008,Misc/Entries with same request number but slightly different descriptions
+nserc-crsng,A-2019-00007,fix-encoding-errors.R/Unicode long stroke overlay character
+nserc-crsng,A-2019-00012,fix-encoding-errors.R/Unicode long stroke overlay character
+oci-bec,A2020-00026,Misc/Different entries with same request number
+ocl-cal,A-2019-2020-012,Misc/Entries with same request number but slightly different descriptions
+ocol-clo,A-2020-027,Misc/Different entries with same request number
+ocol-clo,A-2021-002,Misc/Different entries with same request number
+ocol-clo,A-2021-015,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00163,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00164,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00167,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00169,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00173,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00174,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00175,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00176,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00177,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00179,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00180,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00181,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00184,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00185,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00216,Misc/Entries with same request number but slightly different descriptions
+opc-cpvp,A-2019-00231,Misc/Entries with same request number but slightly different descriptions
+osfi-bsif,A-2020-00003,Misc/Entries with same request number but slightly different descriptions
+pch,A-2020-00023,Misc/Different entries with same request number
+pco-bcp,A-2020-00299,fix-encoding-errors.R/Unicode long stroke overlay character
+phac-aspc,A-2020-000003,Misc/Entries with same request number but slightly different descriptions
+pwgsc-tpsgc,A-2020-00297,fix-encoding-errors.R/Unicode long stroke overlay character
+pwgsc-tpsgc,A-2020-00427,fix-encoding-errors.R/Unicode long stroke overlay character
+pwgsc-tpsgc,A-2021-00319,Misc/Different entries with same request number
+rcmp-grc,A-2017-04306,Misc/Entries with same request number but slightly different descriptions
+rcmp-grc,A-2020-05947,Misc/Entries with same request number but slightly different descriptions
+sshrc-crsh,A-2019-00017,Misc/Missing summary for one entry but not for other
+sshrc-crsh,A-2020-00001,Misc/Different entries with same request number
+vac-acc,A-2018-00041,Misc/Entries with same request number but slightly different descriptions
+vac-acc,A-2018-00146,Misc/Entries with same request number but slightly different descriptions
+vac-acc,A-2021-00027,Misc/Entries with same request number but slightly different descriptions
+vac-acc,AI-2018-00007,Misc/Different entries with same request number
+tc,A-2020-00142,Misc/One summary uppercase the other lowercase
+tc,A-2020-00267,Misc/One summary uppercase the other lowercase
+tc,A-2020-00295,Misc/One summary uppercase the other lowercase
+tc,A-2020-00296,Misc/One summary uppercase the other lowercase
+tc,A-2020-00322,Misc/One summary uppercase the other lowercase
+pch,NA,Misc/Missing request number

@@ -49,3 +49,11 @@ Likely just need to `str_trim()`.
 ## Summary has inconsistent internal whitespace
 
 Maybe `str_squish()`?
+
+## One summary uppercase the other lowercase
+
+Maybe just eliminate the one that's all upper case?
+
+## Missing request number
+
+This'll just be a bigger issue, probably.

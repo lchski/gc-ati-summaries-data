@@ -28,7 +28,9 @@ The invisible character is  `­` or `U+00AD : SOFT HYPHEN [SHY] {discretionary h
 
 ## Different entries with same request number
 
-What it says on the tin. Likely a manual entry error with the year.
+What it says on the tin. Likely a manual entry error with the year. Two clearly different requests.
+
+## Entries with same request number but slightly different descriptions
 
 ## Missing summary for one entry but not for other
 
@@ -37,3 +39,7 @@ Summary `is.na` for one entry, while `! is.na` for another (i.e., one has a summ
 ## Summary has trailing whitespace
 
 Likely just need to `str_trim()`.
+
+## Summary has inconsistent internal whitespace
+
+Maybe `str_squish()`?

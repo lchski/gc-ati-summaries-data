@@ -15,7 +15,7 @@ count_duplicates_by_field <- function(x, field_to_count) {
 
 duplicates_by_field <- saved_summaries %>%
   colnames() %>%
-  .[!. %in% c("owner_org", "request_number")] %>%
+  .[!. %in% c("owner_org", "request_number")] %>% # remove the two columns we don't want to include when counting duplicates (because they're our unique ID columns, we hope)
   enframe(name = NULL, value = "field") %>%
   mutate(
     count_duplicates = map_int(field, ~ saved_summaries %>% count_duplicates_by_field(.x))

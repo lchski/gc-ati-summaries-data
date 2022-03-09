@@ -18,3 +18,9 @@ summary_col_types <- cols(
 saved_summaries <- read_csv("ati-summaries.csv", col_types = summary_col_types)
 
 known_duplicates <- read_csv("cleaning/known-duplicates.csv")
+
+uncategorized_duplicates <- saved_summaries %>%
+  group_by(owner_org, request_number) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  anti_join(known_duplicates)

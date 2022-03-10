@@ -134,6 +134,7 @@ standard_disposition_code_signals <- tribble(
   ),
   "AB", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
     "AB (Request abandoned / Demande abandonnée)",
+    "AB (Request abandoned  / Demande abandonnée)", # typo'd a space when first implemented, heh
     "^aband",
     "^request abandon"
   ),
@@ -152,7 +153,7 @@ summaries_with_standardized_dispositions <- saved_summaries %>%
     str_detect(disposition, signals_for_disposition_code("NE")) ~ "NE (No records exist / Aucun document n’existe)",
     str_detect(disposition, signals_for_disposition_code("EX")) ~ "EX (All exempted / Exception totale)",
     str_detect(disposition, signals_for_disposition_code("EC")) ~ "EC (All excluded / Exclusion totale)",
-    str_detect(disposition, signals_for_disposition_code("AB")) ~ "AB (Request abandoned  / Demande abandonnée)",
+    str_detect(disposition, signals_for_disposition_code("AB")) ~ "AB (Request abandoned / Demande abandonnée)",
     str_detect(disposition, signals_for_disposition_code("TR")) ~ "TR (Transferred / Demande transmise)",
     TRUE ~ disposition
   )) %>%

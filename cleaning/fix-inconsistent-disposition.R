@@ -17,7 +17,7 @@ signals_for_disposition_code <- function(disposition_code) {
 standard_disposition_code_signals <- tribble(
   ~standard_disposition_code, ~signals,
   "DP", c(
-    "DP (Disclosed in part / Communication partielle)",
+    "^DP \\(Disclosed in part / Communication partielle\\)$",
     "^dp",
     "^disclosed in part",
     "^a-p - disclosed in part",
@@ -38,7 +38,7 @@ standard_disposition_code_signals <- tribble(
     "disclosed in part$"
   ),
   "DA", c(
-    "DA (All disclosed / Communication totale)",
+    "^DA \\(All disclosed / Communication totale\\)$",
     "^da",
     "^all disclosed",
     "^full release",
@@ -68,7 +68,7 @@ standard_disposition_code_signals <- tribble(
     "^records released$"
   ),
   "NE", c(
-    "NE (No records exist / Aucun document n’existe)",
+    "^NE \\(No records exist / Aucun document n’existe\\)$",
     "^ne",
     "^no records exist",
     "^does not exist",
@@ -98,7 +98,7 @@ standard_disposition_code_signals <- tribble(
     "aucun document existe$"
   ),
   "EX", c(
-    "EX (All exempted / Exception totale)",
+    "^EX \\(All exempted / Exception totale\\)$",
     "^ex",
     "^nothing disclosed \\(exemption\\)",
     "^all exempted",
@@ -121,7 +121,7 @@ standard_disposition_code_signals <- tribble(
     "\\(exemption\\)"
   ),
   "EC", c(
-    "EC (All excluded / Exclusion totale)",
+    "^EC \\(All excluded / Exclusion totale\\)$",
     "^ec",
     "^nothing disclosed \\(excl",
     "^all excluded",
@@ -133,17 +133,17 @@ standard_disposition_code_signals <- tribble(
     "^nothing disclosed / exclusion totale"
   ),
   "AB", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
-    "AB (Request abandoned / Demande abandonnée)",
-    "AB \\(Request abandoned / Demande abandonnée\\)",
-    "AB (Request abandoned  / Demande abandonnée)", # typo'd a space when first implemented, heh
-    "AB \\(Request abandoned  / Demande abandonnée\\)",
-    "ab \\(request abandoned  / demande abandonnée\\)",
-    "ab \\(request abandoned / demande abandonnée\\)",
+    "^AB \\(Request abandoned / Demande abandonnée\\)",
+    "^AB \\(Request abandoned / Demande abandonnée\\)",
+    "^AB \\(Request abandoned  / Demande abandonnée\\)", # typo'd a space when first implemented, heh
+    "^AB \\(Request abandoned  / Demande abandonnée\\)",
+    "^ab \\(request abandoned  / demande abandonnée\\)",
+    "^ab \\(request abandoned / demande abandonnée\\)",
     "^aband",
     "^request abandon"
   ),
   "TR", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
-    "TR (Transferred / Demande transmise)",
+    "^TR \\(Transferred / Demande transmise\\)$",
     "transferred",
     "^transfer"
   )
@@ -181,5 +181,5 @@ summaries_with_standardized_dispositions %>%
   write_csv("cleaning/temp-summaries.csv")
 
 ## To override the saved set of summaries... Be sure you want to. (But don't worry too much, it's in Git!)
-#summaries_with_standardized_dispositions %>% write_csv("ati-summaries.csv")
+summaries_with_standardized_dispositions %>% write_csv("ati-summaries.csv")
 

@@ -138,6 +138,7 @@ standard_disposition_code_signals <- tribble(
     "AB (Request abandoned  / Demande abandonnée)", # typo'd a space when first implemented, heh
     "AB \\(Request abandoned  / Demande abandonnée\\)",
     "ab \\(request abandoned  / demande abandonnée\\)",
+    "ab \\(request abandoned / demande abandonnée\\)",
     "^aband",
     "^request abandon"
   ),

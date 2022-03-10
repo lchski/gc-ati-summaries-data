@@ -133,13 +133,14 @@ standard_disposition_code_signals <- tribble(
     "^nothing disclosed / exclusion totale"
   ),
   "AB", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
-    "AB (Request abandoned  / Demande abandonnée)",
+    "AB (Request abandoned / Demande abandonnée)",
     "^aband",
     "^request abandon"
   ),
   "TR", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
     "TR (Transferred / Demande transmise)",
-    "transferred"
+    "transferred",
+    "^transfer"
   )
 )
 

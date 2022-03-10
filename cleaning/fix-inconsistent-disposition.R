@@ -134,7 +134,10 @@ standard_disposition_code_signals <- tribble(
   ),
   "AB", c(# Note: Not actually a standard code, but it shows up a few times in the data, and seemed worth preserving.
     "AB (Request abandoned / Demande abandonnée)",
+    "AB \\(Request abandoned / Demande abandonnée\\)",
     "AB (Request abandoned  / Demande abandonnée)", # typo'd a space when first implemented, heh
+    "AB \\(Request abandoned  / Demande abandonnée\\)",
+    "ab \\(request abandoned  / demande abandonnée\\)",
     "^aband",
     "^request abandon"
   ),
@@ -166,7 +169,7 @@ summaries_with_standardized_dispositions %>%
                               "NE (No records exist / Aucun document n’existe)",
                               "EX (All exempted / Exception totale)",
                               "EC (All excluded / Exclusion totale)",
-                              "AB (Request abandoned  / Demande abandonnée)",
+                              "AB (Request abandoned / Demande abandonnée)",
                               "TR (Transferred / Demande transmise)")) %>% # remove known-good codes
   group_by(disposition) %>%
   summarize(count = n()) %>%
@@ -177,5 +180,5 @@ summaries_with_standardized_dispositions %>%
   write_csv("cleaning/temp-summaries.csv")
 
 ## To override the saved set of summaries... Be sure you want to. (But don't worry too much, it's in Git!)
-summaries_with_standardized_dispositions %>% write_csv("ati-summaries.csv")
+#summaries_with_standardized_dispositions %>% write_csv("ati-summaries.csv")
 

@@ -4,6 +4,7 @@ library(dplyr)
 library(stringr)
 
 source("lib/cleaning/encoding.R")
+source("lib/cleaning/standardize-disposition.R")
 
 summary_col_types <- cols(
   year = col_double(),

@@ -18,6 +18,6 @@ You can also [check out the issues list](https://github.com/lchski/gc-ati-summar
 
 Thanks:
 
-- JD, AL, SB for the original dataset and encouragement
+- [Jamie Duncan](https://jamieduncan.me/), AL, SB for the original dataset and encouragement
 - Simon Willison for [git scraping](https://simonwillison.net/series/git-scraping/), [datasette](https://datasette.io/), and a [clear how-to on deploying a git scraping datasette instance in a serverless function](https://simonwillison.net/2020/Jan/21/github-actions-cloud-run/) (what is the internet!?)
 - Government of Canada Open Data team, and Access to Information shops everywhere, for [doing the hard work to make things open](https://www.gov.uk/guidance/government-design-principles#make-things-open-it-makes-things-better)

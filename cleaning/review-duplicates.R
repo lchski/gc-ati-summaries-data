@@ -25,6 +25,6 @@ saved_summaries %>%
   semi_join(uncategorized_duplicates) %>%
   arrange(owner_org, request_number) %>%
   select(owner_org, request_number, everything()) %>%
-  write_csv("cleaning/duplicates.csv")
+  write_csv("cleaning/uncategorized-duplicates.csv")
 
 

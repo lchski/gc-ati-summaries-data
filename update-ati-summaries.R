@@ -3,6 +3,8 @@ library(readr)
 library(dplyr)
 library(stringr)
 
+source("lib/cleaning/encoding.R")
+
 summary_col_types <- cols(
   year = col_double(),
   month = col_double(),
@@ -37,6 +39,7 @@ updated_summaries <- bind_rows(saved_summaries, published_summaries) %>% # Combi
     is.character,
     str_squish
   ) %>%
+  clean_summary_encoding %>%
   distinct() %>% # Remove duplicate entries.
   arrange(year, month, owner_org, request_number) ## Sort so updates are easier to see and diffs more consistent.
 

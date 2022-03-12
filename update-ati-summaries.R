@@ -33,6 +33,10 @@ updated_summaries <- bind_rows(saved_summaries, published_summaries) %>% # Combi
     is.character,
     ~ str_replace_all(., fixed("\r\n"), "\n") ## Convert CRLF to LF, since the ATI summaries often come from Windows machines / Excel exports.
   ) %>%
+  mutate_if(
+    is.character,
+    str_squish
+  ) %>%
   distinct() %>% # Remove duplicate entries.
   arrange(year, month, owner_org, request_number) ## Sort so updates are easier to see and diffs more consistent.
 

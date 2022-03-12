@@ -19,6 +19,7 @@ standard_disposition_code_signals <- tribble(
   ~standard_disposition_code, ~signals,
   "DP", c(
     "^DP \\(Disclosed in part / Communication partielle\\)$",
+    "^DP$",
     "^dp"
     # "^disclosed in part",
     # "^a-p - disclosed in part",
@@ -40,6 +41,7 @@ standard_disposition_code_signals <- tribble(
   ),
   "DA", c(
     "^DA \\(All disclosed / Communication totale\\)$",
+    "^DA$",
     "^da"
     # "^all disclosed",
     # "^full release",
@@ -70,7 +72,8 @@ standard_disposition_code_signals <- tribble(
   ),
   "NE", c(
     "^NE \\(No records exist / Aucun document n’existe\\)$",
-    "^ne"
+    "^NE$"
+    # "^ne"
     # "^no records exist",
     # "^does not exist",
     # "^no records",
@@ -100,6 +103,7 @@ standard_disposition_code_signals <- tribble(
   ),
   "EX", c(
     "^EX \\(All exempted / Exception totale\\)$",
+    "^EX$",
     "^ex"
     # "^nothing disclosed \\(exemption\\)",
     # "^all exempted",
@@ -123,6 +127,7 @@ standard_disposition_code_signals <- tribble(
   ),
   "EC", c(
     "^EC \\(All excluded / Exclusion totale\\)$",
+    "^EC$",
     "^ec"
     # "^nothing disclosed \\(excl",
     # "^all excluded",
@@ -154,15 +159,15 @@ standard_disposition_code_signals <- tribble(
 
 standardize_summary_disposition <- function(summaries) {
   summaries %>%
-    mutate(disposition = str_trim(str_to_lower(disposition))) %>% # lowercase to standardize and remove some duplicates
+    # mutate(disposition = str_trim(str_to_lower(disposition))) %>% # lowercase to standardize and remove some duplicates
     mutate(disposition = case_when(
       str_detect(disposition, signals_for_disposition_code("DP")) ~ "DP (Disclosed in part / Communication partielle)",
       str_detect(disposition, signals_for_disposition_code("DA")) ~ "DA (All disclosed / Communication totale)",
       str_detect(disposition, signals_for_disposition_code("NE")) ~ "NE (No records exist / Aucun document n’existe)",
       str_detect(disposition, signals_for_disposition_code("EX")) ~ "EX (All exempted / Exception totale)",
       str_detect(disposition, signals_for_disposition_code("EC")) ~ "EC (All excluded / Exclusion totale)",
-      str_detect(disposition, signals_for_disposition_code("AB")) ~ "AB (Request abandoned / Demande abandonnée)",
-      str_detect(disposition, signals_for_disposition_code("TR")) ~ "TR (Transferred / Demande transmise)",
+      # str_detect(disposition, signals_for_disposition_code("AB")) ~ "AB (Request abandoned / Demande abandonnée)",
+      # str_detect(disposition, signals_for_disposition_code("TR")) ~ "TR (Transferred / Demande transmise)",
       TRUE ~ disposition
     ))
 }

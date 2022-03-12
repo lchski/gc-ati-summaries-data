@@ -39,7 +39,8 @@ updated_summaries <- bind_rows(saved_summaries, published_summaries) %>% # Combi
     is.character,
     str_squish
   ) %>%
-  clean_summary_encoding %>%
+  clean_summary_encoding() %>%
+  standardize_summary_disposition() %>%
   distinct() %>% # Remove duplicate entries.
   arrange(year, month, owner_org, request_number) ## Sort so updates are easier to see and diffs more consistent.
 

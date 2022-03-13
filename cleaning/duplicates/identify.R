@@ -5,10 +5,14 @@ library(purrr)
 
 source("load.R")
 
-# See various duplicate frequencies / commentary here: https://github.com/lchski/gc-ati-summaries-data/issues/3
+# Load, sort, and re-save list of known duplicates (which we've categorized, see `cleaning/duplicates/README.md`):
+categorized_duplicates <- read_csv("cleaning/duplicates/categorized.csv") %>%
+  arrange(reason, owner_org)
 
-categorized_duplicates <- read_csv("cleaning/duplicates/categorized.csv")
+categorized_duplicates %>%
+  write_csv("cleaning/duplicates/categorized.csv")
 
+# Identify duplicates (based on `owner_org` and `request_number` combo)
 uncategorized_duplicates <- saved_summaries %>%
   group_by(owner_org, request_number) %>%
   summarize(count = n()) %>%

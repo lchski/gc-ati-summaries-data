@@ -1,10 +1,19 @@
-See `known-duplicates.csv` for affected entries.
+# Duplicate handling
 
-Run `read_csv("cleaning/known-duplicates.csv") %>% arrange(reason, owner_org) %>% write_csv("cleaning/known-duplicates.csv")` to arrange by reason.
+`identify.R` updates `uncategorized.csv` and `summary-by-field.csv`:
 
-# fix-encoding-errors.R
+- `uncategorized.csv`: List of duplicates that we haven't yet looked into.
+- `summary-by-field.csv`: Count of duplicates by field that causes `distinct()` to fail. `count_duplicates` may sum to a higher number than `uncategorized.csv`, because some entries may differ across multiple fields.
 
-## Invalid multibyte character
+We update `categorized.csv` manually, after having reviewed `uncategorized.csv` and assigned it a code based on the categories below. The `h3` (e.g., `Misc`) is the category namespace and the `h4` (e.g., `Different entries with same request number`) is the category issue. Combined, they form the `reason` column in `categorized.csv`: `Misc/Different entries with same request number`.
+
+[See issues related to `duplicate handling`.](https://github.com/lchski/gc-ati-summaries-data/labels/duplicate%20handling)
+
+## Duplicate categories
+
+### lib/cleaning/encoding.R
+
+#### Invalid multibyte character
 
 ```
 saved_summaries %>%
@@ -25,35 +34,35 @@ The invisible character is  `­` or `U+00AD : SOFT HYPHEN [SHY] {discretionary h
 "\u00AD" = "-",
 ```
 
-## Unicode long stroke overlay character
+#### Unicode long stroke overlay character
 
 Looks like `Ì¶` in version that needs re-encoding; renders as ` ̶` (two characters: a space with a hyphen overlay).
 
 
-# Misc
+### Misc
 
-## Different entries with same request number
+#### Different entries with same request number
 
 What it says on the tin. Likely a manual entry error with the year. Two clearly different requests.
 
-## Entries with same request number but slightly different descriptions
+#### Entries with same request number but slightly different descriptions
 
-## Missing summary for one entry but not for other
+#### Missing summary for one entry but not for other
 
 Summary `is.na` for one entry, while `! is.na` for another (i.e., one has a summary, the other is blank—can likely just `filter(! is.na)` to fix, but would want to verify).
 
-## Summary has trailing whitespace
+#### Summary has trailing whitespace
 
 Likely just need to `str_trim()`.
 
-## Summary has inconsistent internal whitespace
+#### Summary has inconsistent internal whitespace
 
 Maybe `str_squish()`?
 
-## One summary uppercase the other lowercase
+#### One summary uppercase the other lowercase
 
 Maybe just eliminate the one that's all upper case?
 
-## Missing request number
+#### Missing request number
 
 This'll just be a bigger issue, probably.

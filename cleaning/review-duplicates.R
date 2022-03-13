@@ -1,5 +1,7 @@
 library(readr)
 library(dplyr)
+library(tibble)
+library(purrr)
 
 source("load.R")
 

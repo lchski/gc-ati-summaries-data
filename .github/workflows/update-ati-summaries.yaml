@@ -29,3 +29,5 @@ jobs:
         timestamp=$(date -u)
         git commit -m "Latest data: ${timestamp}" || exit 0
         git push
+    - name: Deploy changes to datasette
+      uses: ./.github/workflows/deploy-datasette-site.yaml

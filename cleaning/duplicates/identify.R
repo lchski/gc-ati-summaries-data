@@ -34,10 +34,11 @@ duplicates_by_field <- saved_summaries %>%
     count_duplicates = map_int(field, ~ saved_summaries %>% count_duplicates_by_field(.x))
   )
 
+duplicates_by_field %>%
+  write_csv("cleaning/duplicates/summary-by-field.csv")
+
 saved_summaries %>%
   semi_join(uncategorized_duplicates) %>%
   arrange(owner_org, request_number) %>%
   select(owner_org, request_number, everything()) %>%
   write_csv("cleaning/duplicates/uncategorized.csv")
-
-

@@ -21,6 +21,9 @@ jobs:
     - name: Fetch latest summaries
       run: |-
         Rscript update-ati-summaries.R
+    - name: Update list of duplicates
+      run: |-
+        Rscript cleaning/duplicates/identify.R
     - name: Commit and push if changed
       run: |-
         git config user.name "Automated"

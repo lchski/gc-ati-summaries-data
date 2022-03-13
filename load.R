@@ -1,4 +1,4 @@
-library(tidyverse)
+library(readr)
 
 summary_col_types <- cols(
   year = col_double(),
@@ -15,12 +15,7 @@ summary_col_types <- cols(
   owner_org_title = col_character()
 )
 
-saved_summaries <- read_csv("ati-summaries.csv", col_types = summary_col_types)
-
-known_duplicates <- read_csv("cleaning/known-duplicates.csv")
-
-uncategorized_duplicates <- saved_summaries %>%
-  group_by(owner_org, request_number) %>%
-  summarize(count = n()) %>%
-  filter(count > 1) %>%
-  anti_join(known_duplicates)
+saved_summaries <- read_csv(
+  "ati-summaries.csv",
+  col_types = summary_col_types
+)

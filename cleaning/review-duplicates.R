@@ -1,6 +1,17 @@
-source("cleaning/load.R")
+library(readr)
+library(dplyr)
+
+source("load.R")
 
 # See various duplicate frequencies / commentary here: https://github.com/lchski/gc-ati-summaries-data/issues/3
+
+known_duplicates <- read_csv("cleaning/known-duplicates.csv")
+
+uncategorized_duplicates <- saved_summaries %>%
+  group_by(owner_org, request_number) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  anti_join(known_duplicates)
 
 count_duplicates_by_field <- function(x, field_to_count) {
   x %>%

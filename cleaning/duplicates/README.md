@@ -1,7 +1,8 @@
 # Duplicate handling
 
-`identify.R` updates `uncategorized.csv` and `summary-by-field.csv`:
+`identify.R` updates `duplicates.csv`, `uncategorized.csv`, and `summary-by-field.csv`:
 
+- `duplicates.csv`: All duplicates. `reason` column has a value if we’ve marked it in `categorized.csv` (see below).
 - `uncategorized.csv`: List of duplicates that we haven't yet looked into.
 - `summary-by-field.csv`: Count of duplicates by field that causes `distinct()` to fail. `count_duplicates` may sum to a higher number than `uncategorized.csv`, because some entries may differ across multiple fields.
 

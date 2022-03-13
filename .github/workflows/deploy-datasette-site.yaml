@@ -9,7 +9,9 @@ name: Deploy datasette instance with summaries data
 # TODO: Add a reasonable schedule. Or on push, depending on time / cost it incurs?
 on:
   workflow_dispatch:
-  workflow_call:
+  workflow_call: # mere optimism, see issue #6
+  schedule:
+    - cron:  '42 9 * * 0' # https://crontab.guru/#42_9_*_*_0 one hour after `update-ati-summaries.yaml`, see issue #6
   push:
     paths:
       - 'ati-summaries.csv'

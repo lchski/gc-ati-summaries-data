@@ -7,13 +7,13 @@ source("load.R")
 
 # See various duplicate frequencies / commentary here: https://github.com/lchski/gc-ati-summaries-data/issues/3
 
-known_duplicates <- read_csv("cleaning/known-duplicates.csv")
+categorized_duplicates <- read_csv("cleaning/duplicates/categorized.csv")
 
 uncategorized_duplicates <- saved_summaries %>%
   group_by(owner_org, request_number) %>%
   summarize(count = n()) %>%
   filter(count > 1) %>%
-  anti_join(known_duplicates)
+  anti_join(categorized_duplicates)
 
 count_duplicates_by_field <- function(x, field_to_count) {
   x %>%
@@ -22,7 +22,7 @@ count_duplicates_by_field <- function(x, field_to_count) {
     group_by(owner_org, request_number) %>%
     summarize(count = n()) %>%
     filter(count > 1) %>%
-    anti_join(known_duplicates) %>%
+    anti_join(categorized_duplicates) %>%
     nrow()
 }
 
@@ -38,6 +38,6 @@ saved_summaries %>%
   semi_join(uncategorized_duplicates) %>%
   arrange(owner_org, request_number) %>%
   select(owner_org, request_number, everything()) %>%
-  write_csv("cleaning/uncategorized-duplicates.csv")
+  write_csv("cleaning/duplicates/uncategorized.csv")
 
 

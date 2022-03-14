@@ -19,13 +19,18 @@ duplicates <- saved_summaries %>%
   summarize(count = n()) %>%
   filter(count > 1)
 
-count_duplicates_by_field <- function(x, field_to_count) {
+identify_duplicates_by_field <- function(x, field_to_count) {
   x %>%
     select(owner_org, request_number, !!field_to_count) %>%
     distinct() %>%
     group_by(owner_org, request_number) %>%
     summarize(count = n()) %>%
-    filter(count > 1) %>%
+    filter(count > 1)
+}
+
+count_duplicates_by_field <- function(x, field_to_count) {
+  x %>%
+    identify_duplicates_by_field(field_to_count) %>%
     nrow()
 }
 

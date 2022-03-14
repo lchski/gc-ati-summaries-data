@@ -7,7 +7,8 @@ source("load.R")
 
 # Load, sort, and re-save list of known duplicates (which we've categorized, see `cleaning/duplicates/README.md`):
 categorized_duplicates <- read_csv("cleaning/duplicates/categorized.csv") %>%
-  arrange(reason, owner_org)
+  arrange(reason, owner_org) %>%
+  distinct()
 
 categorized_duplicates %>%
   write_csv("cleaning/duplicates/categorized.csv")

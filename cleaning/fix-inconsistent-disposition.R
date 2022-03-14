@@ -1,4 +1,8 @@
-source("cleaning/load.R")
+source("load.R")
+source("cleaning/duplicates/identify.R")
+
+duplicates_due_to_disposition <- saved_summaries %>%
+  identify_duplicates_by_field("disposition")
 
 # See remaining non-standard dispositions
 saved_summaries %>%
@@ -12,3 +16,12 @@ saved_summaries %>%
   group_by(disposition) %>%
   summarize(count = n()) %>%
   arrange(-count)
+
+saved_summaries %>%
+  semi_join(duplicates_due_to_disposition) %>%
+  arrange(owner_org, request_number) %>%
+  View()
+
+# TODO:
+# - one has a standard disposition, the other is.na (drop the latter)
+# - one has a standard disposition, the other a non-standard (drop the latter)

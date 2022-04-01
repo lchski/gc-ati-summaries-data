@@ -54,4 +54,7 @@ jobs:
         gcloud config set run/region us-central1
         gcloud config set project gc-ati-summaries-data
         datasette publish cloudrun summaries.db \
-          --service gc-ati-summaries-data
+          --service gc-ati-summaries-data \
+          --install=datasette-block-robots \
+          --install=datasette-copyable \
+          --install=datasette-vega

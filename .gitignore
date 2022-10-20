@@ -1,7 +1,9 @@
 .Rproj.user
 .Rhistory
 .RData
+.RDataTmp
 .Ruserdata
 .Rbuildignore
 *.db
 gha-creds-*.json
+.DS_Store

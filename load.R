@@ -15,8 +15,6 @@ summary_col_types <- cols(
   owner_org_title = col_character()
 )
 
-#saved_summaries <-  read_csv("ati-full-historical-data.csv", col_types = summary_col_types)
-
 saved_summaries <- read_csv(
   "ati-summaries.csv",
   col_types = summary_col_types

@@ -5,3 +5,4 @@
 .Rbuildignore
 *.db
 gha-creds-*.json
+.DS_Store

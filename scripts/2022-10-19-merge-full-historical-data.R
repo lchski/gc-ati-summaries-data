@@ -36,3 +36,5 @@ combined_summaries <- bind_rows(
   standardize_summary_disposition() %>%
   distinct() %>% # Remove duplicate entries.
   arrange(year, month, owner_org, request_number)
+
+combined_summaries %>% write_csv("ati-summaries.csv")

@@ -5,4 +5,4 @@
 .Rbuildignore
 *.db
 gha-creds-*.json
-*Rproj
+*.Rproj

@@ -21,3 +21,12 @@ Thanks:
 - [Jamie Duncan](https://jamieduncan.me/), AL, SB for the original dataset and encouragement
 - Simon Willison for [git scraping](https://simonwillison.net/series/git-scraping/), [datasette](https://datasette.io/), and a [clear how-to on deploying a git scraping datasette instance in a serverless function](https://simonwillison.net/2020/Jan/21/github-actions-cloud-run/) (what is the internet!?)
 - Government of Canada Open Data team, and Access to Information shops everywhere, for [doing the hard work to make things open](https://www.gov.uk/guidance/government-design-principles#make-things-open-it-makes-things-better)
+
+## 2022-11-21: Note on data source
+
+- 2022-10-18, @jdunca contributed the full historical dataset (#9).
+- 2022-10-19, @lchski merged the historical dataset, integrating with existing data and removing duplicates (#10).
+- 2022-10-25, @jdunca points out that [most of the remaining duplicates (a few hundred that point)](https://github.com/lchski/gc-ati-summaries-data/tree/b68f32b4b5177cdc8c9f25504c166f60b91ba5d3/cleaning/duplicates) were due to errors from the original source data, and they seemed mostly fixed in the full historical dataset (#11).
+- 2022-11-21, @lchski (with many apologies for his tardiness) made a few edits and merged #11.
+
+There’s a small possibility some summaries fell through the cracks in this process—but checks by @jdunca in `cleaning/2022-10-23-exploring-errors-merging-historical-data.R` make us pretty confident all’s good. There are around 250 remaining duplicates, largely due to slight changes in request summary, mostly from SSC—these are left as potentially interesting data points.

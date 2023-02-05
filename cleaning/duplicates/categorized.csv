@@ -1,10 +1,4 @@
 owner_org,request_number,reason
-cihr-irsc,A-2020-0015,fix-encoding-errors.R/Unicode long stroke overlay character
-nserc-crsng,A-2019-00007,fix-encoding-errors.R/Unicode long stroke overlay character
-nserc-crsng,A-2019-00012,fix-encoding-errors.R/Unicode long stroke overlay character
-pco-bcp,A-2020-00299,fix-encoding-errors.R/Unicode long stroke overlay character
-pwgsc-tpsgc,A-2020-00297,fix-encoding-errors.R/Unicode long stroke overlay character
-pwgsc-tpsgc,A-2020-00427,fix-encoding-errors.R/Unicode long stroke overlay character
 aafc-aac,A-2018-00045,Misc/Different entries with same request number
 cnsopb,"10,555.22",Misc/Different entries with same request number
 cta-otc,A-2018-00008,Misc/Different entries with same request number
@@ -83,3 +77,9 @@ tc,A-2020-00295,Misc/One summary uppercase the other lowercase
 tc,A-2020-00296,Misc/One summary uppercase the other lowercase
 tc,A-2020-00322,Misc/One summary uppercase the other lowercase
 irb-cisr,A-2018-01219,Misc/Summary has inconsistent internal whitespace
+cihr-irsc,A-2020-0015,fix-encoding-errors.R/Unicode long stroke overlay character
+nserc-crsng,A-2019-00007,fix-encoding-errors.R/Unicode long stroke overlay character
+nserc-crsng,A-2019-00012,fix-encoding-errors.R/Unicode long stroke overlay character
+pco-bcp,A-2020-00299,fix-encoding-errors.R/Unicode long stroke overlay character
+pwgsc-tpsgc,A-2020-00297,fix-encoding-errors.R/Unicode long stroke overlay character
+pwgsc-tpsgc,A-2020-00427,fix-encoding-errors.R/Unicode long stroke overlay character
